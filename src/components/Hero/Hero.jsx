@@ -44,7 +44,7 @@ export default function Hero() {
         <div className={styles.modalOverlay}>
           <div className={styles.modal}>
             <h3>Entre em contato 💌</h3>
-            <p>Email: <strong>tabata.macedo@email.com</strong></p>
+            <p>Email: <strong>kauannymoreira82@gmail.com</strong></p>
             <button onClick={toggleModal} className={styles.closeBtn}>
               Fechar
             </button>
