@@ -49,8 +49,10 @@ export default function Hero() {
               Fechar
             </button>
           </div>
+          
         </div>
       )}
     </section>
+    
   );
 }

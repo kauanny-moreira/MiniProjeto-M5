@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React from "react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import styles from "./Footer.module.css";
 
@@ -6,7 +6,7 @@ export default function Footer(){
     
 
     return(
-   <footer className={styles.footer}>
+   <footer className={styles.footer} id="contato">
       <div className={styles.footerContent}>
         <p className={styles.footerText}>
           Mais que desenvolver, construo pontes entre o digital e o humano.

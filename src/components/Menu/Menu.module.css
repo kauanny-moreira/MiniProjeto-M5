@@ -1,12 +1,53 @@
-.containerMenu{
-  background-color: transparent;
+.containerMenu {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  padding: 0.8rem 2.5rem; /* Diminui o padding vertical e horizontal */
+  background-color: #1a0033;
+  color: #e2d9f3;
+  border-bottom: 1px solid #bb86fc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.menu{
-  display: flex;
+.logo {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.3rem; /* Fonte do logo ainda menor */
+  font-weight: 600;
+  background: linear-gradient(90deg, #bb86fc, #ff79c6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu {
   list-style: none;
-  gap: 16px;
+  display: flex;
+  gap: 1.5rem; /* Reduz o espaçamento entre os links */
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #e2d9f3;
+  font-size: 0.9rem; /* Fonte dos links menor para um visual mais clean */
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu li a:hover {
+  color: #bb86fc;
+  transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .containerMenu {
+    flex-direction: column;
+    padding: 0.8rem 1rem;
+  }
+  
+  .menu {
+    margin-top: 0.8rem; /* Espaço reduzido para telas menores */
+    flex-direction: column;
+    text-align: center;
+    gap: 0.8rem;
+  }
 }

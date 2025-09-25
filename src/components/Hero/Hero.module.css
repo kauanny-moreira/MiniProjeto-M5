@@ -1,115 +1,207 @@
+
+
 .hero {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
   padding: 4rem 8%;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #1a0033, #0a0018 60%);
   color: #fff;
+  position: relative;
+  overflow: hidden;
 }
 
+/* estrelas animadas no fundo */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: transparent url("https://www.transparenttextures.com/patterns/stardust.png")
+    repeat;
+  opacity: 0.4;
+  animation: moveStars 60s linear infinite;
+}
+
+.hero::after {
+  animation-direction: reverse;
+  opacity: 0.2;
+}
+
+@keyframes moveStars {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(-100px, -100px);
+  }
+}
+
+/* CONTEÚDO DE TEXTO */
 .content {
   max-width: 600px;
+  z-index: 1;
 }
 
 .subtitle {
-  color: #d291ff;
-  font-weight: 500;
+  font-size: 1.2rem;
+  color: #bb86fc;
+  letter-spacing: 2px;
   margin-bottom: 0.5rem;
+  text-transform: uppercase;
 }
 
 .title {
   font-size: 3.5rem;
-  font-weight: 800;
-  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+  background: linear-gradient(90deg, #bb86fc, #ff79c6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .role {
-  font-size: 1.2rem;
-  margin: 0.5rem 0 1rem;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: #d0aaff;
 }
 
 .description {
+  margin: 1.5rem 0;
   font-size: 1.1rem;
-  margin-bottom: 2rem;
   line-height: 1.6;
+  color: #e2d9f3;
 }
 
+/* BOTÕES */
 .buttons {
   display: flex;
   gap: 1rem;
+  margin-top: 2rem;
+}
+
+.primaryBtn,
+.secondaryBtn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
 
 .primaryBtn {
-  background: #ff3cac;
-  background: linear-gradient(90deg, #784ba0, #ff3cac);
-  color: white;
-  padding: 0.8rem 1.6rem;
+  background: linear-gradient(135deg, #bb86fc, #7c4dff);
+  color: #fff;
   border: none;
-  border-radius: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(187, 134, 252, 0.7);
 }
 
 .primaryBtn:hover {
-  opacity: 0.9;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(187, 134, 252, 1);
 }
 
 .secondaryBtn {
-  border: 2px solid #d291ff;
-  padding: 0.8rem 1.6rem;
-  border-radius: 10px;
-  color: #d291ff;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s;
+  background: transparent;
+  border: 2px solid #bb86fc;
+  color: #bb86fc;
 }
 
 .secondaryBtn:hover {
-  background: #d291ff;
+  background: #bb86fc;
   color: #fff;
 }
 
+/* IMAGEM */
 .imageWrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  max-width: 400px;
+  z-index: 1;
 }
 
 .image {
-  max-width: 350px;
-  border-radius: 30% 70% 70% 30%;
-  object-fit: cover;
-  box-shadow: 0px 5px 20px rgba(255, 255, 255, 0.1);
+  width: 100%;
+  border-radius: 50%;
+  border: 4px solid #bb86fc;
+  box-shadow: 0 0 30px rgba(187, 134, 252, 0.7);
 }
 
-/* Modal */
+/* MODAL */
 .modalOverlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
+  inset: 0;
+  background: rgba(10, 0, 20, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 100;
 }
 
 .modal {
-  background: #1c1c29;
+  background: #1c0037;
+  border-radius: 20px;
   padding: 2rem;
-  border-radius: 15px;
-  text-align: center;
-  color: #fff;
   max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(187, 134, 252, 0.7);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal h3 {
+  color: #bb86fc;
+  margin-bottom: 1rem;
+}
+
+.modal p {
+  color: #e2d9f3;
+  margin-bottom: 1.5rem;
 }
 
 .closeBtn {
-  margin-top: 1rem;
-  background: #ff3cac;
+  padding: 0.7rem 1.3rem;
+  background: #bb86fc;
   color: #fff;
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
+  border-radius: 50px;
   cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.closeBtn:hover {
+  background: #9d5cff;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .imageWrapper {
+    margin-top: 2rem;
+  }
 }
