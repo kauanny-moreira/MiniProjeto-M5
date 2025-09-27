@@ -18,14 +18,16 @@
 
 .imgWrapper {
   margin-bottom: 1rem;
-  min-height: 120px;
+  min-height: 220px; /* mais espaço para a imagem */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .thumb {
-  width: 100%;
+  width: 100%;       /* ocupa toda a largura do card */
+  height: auto;      /* mantém proporção original */
+  max-height: 200px; /* limita a altura máxima */
   border-radius: 10px;
   border: 2px solid rgba(187, 134, 252, 0.5);
   box-shadow: 0 0 15px rgba(187, 134, 252, 0.3);
@@ -33,7 +35,7 @@
 
 .placeholder {
   width: 100%;
-  height: 120px;
+  height: 200px;        /* aumenta o placeholder */
   border-radius: 10px;
   background: rgba(187, 134, 252, 0.1);
   display: flex;
@@ -44,6 +46,7 @@
   font-weight: 600;
   text-align: center;
 }
+
 
 .titulo {
   font-size: 1.3rem;

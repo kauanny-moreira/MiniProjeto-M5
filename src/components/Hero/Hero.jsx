@@ -34,8 +34,8 @@ export default function Hero() {
 
       <div className={styles.imageWrapper}>
         <img
-          src="/foto.png" // 👉 coloque sua imagem aqui na pasta public
-          alt="Tábata Macedo sorrindo com microfone e computador ao fundo"
+          src="/eu.jpg" 
+          alt="Kauanny em uma selfie sorrindo "
           className={styles.image}
         />
       </div>
