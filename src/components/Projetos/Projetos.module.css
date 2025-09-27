@@ -1,0 +1,69 @@
+.projetos {
+  padding: 4rem 8%;
+  background: radial-gradient(circle at top left, #1a0033, #0a0018 70%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+/* Estrelas animadas de fundo */
+.projetos::before,
+.projetos::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: transparent url("https://www.transparenttextures.com/patterns/stardust.png") repeat;
+  opacity: 0.3;
+  animation: moveStars 80s linear infinite;
+  pointer-events: none; /* importante para não bloquear cliques */
+  z-index: 0;
+}
+
+.projetos::after {
+  animation-direction: reverse;
+  opacity: 0.2;
+}
+
+@keyframes moveStars {
+  from { transform: translate(0, 0); }
+  to { transform: translate(-100px, -100px); }
+}
+
+/* Título */
+.titulo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(90deg, #bb86fc, #ff79c6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+/* Grid de projetos */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1; /* garante que os cards fiquem acima do fundo */
+}
+
+/* Responsivo */
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+

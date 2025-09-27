@@ -4,7 +4,6 @@ import Footer from "./components/Footer/Footer.jsx";
 import Sobre from "./components/Sobre/Sobre.jsx";
 import Projetos from './components/Projetos/Projetos.jsx';
 
-
 // arquivo principal
 export default function App(){
   return(
